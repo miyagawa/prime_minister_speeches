@@ -75,7 +75,7 @@ sub build_index {
 
     my $html = html {
         head {
-            script { src is "http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js" };
+            title { "Japanese Prime Minister Speech Cloud" };
             meta { http_equiv is "Content-Type"; content is "text/html;charset=utf-8" };
             link { rel is "stylesheet"; href is "screen.css" };
             style { outs_raw(HTML::TagCloud->new->css) };
