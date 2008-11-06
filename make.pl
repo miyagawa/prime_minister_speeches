@@ -44,6 +44,7 @@ sub extract_words {
 
     my $tree = HTML::TreeBuilder->new_from_content($content);
     my $text = HTML::FormatText->new->format($tree);
+    $text =~ s/\s+//gs;
 
     my $res = Text::Kakasi->new(qw(-iutf8 -outf8 -w))->get($text);
     return grep is_skip_word($_), split /\s+/, $res;
@@ -67,7 +68,7 @@ sub build_html {
 
 sub is_skip_word {
     local $_ = shift;
-    !/^[\p{IsHiragana}\p{IsPunct}\[a-zA-Z\]]+$/;
+    !/^[\p{IsHiragana}\p{IsPunct}\[a-zA-Z\]\d]+$/;
 }
 
 sub build_index {
