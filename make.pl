@@ -99,7 +99,9 @@ sub build_index {
                     a { href is "http://perl.org/"; "Perl" };
                     outs " and ";
                     a { href is "http://search.cpan.org/dist/Text-Kakasi/"; "Text::Kakasi" };
-                    img { src is "http://b.hatena.ne.jp/entry/image/" . "http://blog.bulknews.net/prime_minister_speeches/"; style is "vertical-align:middle" };
+                    my $url = "http://blog.bulknews.net/prime_minister_speeches/";
+                    a { href is "http://b.hatena.ne.jp/entry/$url";
+                        img { src is "http://b.hatena.ne.jp/entry/image/$url" .  style is "vertical-align:middle" } };
                 };
             };
         }
