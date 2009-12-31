@@ -94,7 +94,7 @@ sub build_index {
 
                 div {
                     style is "text-align:center;margin-top:3em";
-                    outs "2008. Built by ";
+                    outs "2009. Built by ";
                     a { href is "http://bulknews.vox.com/"; "Tatsuhiko Miyagawa" };
                     outs " using ";
                     a { href is "http://perl.org/"; "Perl" };
