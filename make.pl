@@ -15,12 +15,12 @@ my %urls = (
     fukuda => " http://www.kantei.go.jp/jp/hukudaspeech/2007/10/01syosin.html",
     abe => "http://www.kantei.go.jp/jp/abespeech/2006/09/29syosin.html",
     koizumi => "http://www.kantei.go.jp/jp/koizumispeech/2001/0507syosin.html",
-    ozawa => "http://www.dpj.or.jp/news/?num=14163",
+    hatoyama => "http://www.kantei.go.jp/jp/hatoyama/statement/200912/25kaiken.html",
 );
 
 my @names = (
+    hatoyama => "Yukio Hatoyama",
     aso => "Taro Aso",
-    ozawa => "Ichiro Ozawa (DPJ)",
     fukuda => "Yasuo Fukuda",
     abe => "Shinzo Abe",
     koizumi => "Jun-ichiro Koizumi",
@@ -72,7 +72,7 @@ sub is_skip_word {
 }
 
 sub build_index {
-    open my $out, ">", "index.html" or die;
+    open my $out, ">:utf8", "index.html" or die;
 
     my $html = html {
         head {
